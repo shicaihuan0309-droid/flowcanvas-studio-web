@@ -1,0 +1,97 @@
+/* Global CSS with theme variables */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Dark theme (default) */
+    --canvas-bg: #0d0d0d;
+    --canvas-dot: #2a2a2a;
+    --canvas-grid: #1a1a1a;
+
+    --panel-bg: #141414;
+    --panel-border: #2a2a2a;
+    --panel-header: #1a1a1a;
+
+    --node-bg: #1e1e1e;
+    --node-border: #3a3a3a;
+    --node-border-hover: #555555;
+    --node-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    --node-radius: 12px;
+
+    --text-primary: #e8e8e8;
+    --text-secondary: #a0a0a0;
+    --text-muted: #666666;
+
+    --status-idle: #666666;
+    --status-running: #3b82f6;
+    --status-completed: #22c55e;
+    --status-failed: #ef4444;
+    --status-queued: #f59e0b;
+
+    --edge-default: #555555;
+    --edge-selected: #e8e8e8;
+    --edge-hover: #888888;
+
+    --input-bg: #1e1e1e;
+    --input-border: #3a3a3a;
+    --toolbar-bg: #1a1a1a;
+    --toolbar-border: #2a2a2a;
+  }
+
+  .light {
+    --canvas-bg: #f5f5f5;
+    --canvas-dot: #d0d0d0;
+    --canvas-grid: #e8e8e8;
+
+    --panel-bg: #ffffff;
+    --panel-border: #e0e0e0;
+    --panel-header: #f8f8f8;
+
+    --node-bg: #ffffff;
+    --node-border: #d0d0d0;
+    --node-border-hover: #a0a0a0;
+    --node-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    --node-radius: 12px;
+
+    --text-primary: #1a1a1a;
+    --text-secondary: #666666;
+    --text-muted: #999999;
+
+    --status-idle: #999999;
+    --status-running: #2563eb;
+    --status-completed: #16a34a;
+    --status-failed: #dc2626;
+    --status-queued: #d97706;
+
+    --edge-default: #b0b0b0;
+    --edge-selected: #333333;
+    --edge-hover: #666666;
+
+    --input-bg: #ffffff;
+    --input-border: #d0d0d0;
+    --toolbar-bg: #ffffff;
+    --toolbar-border: #e0e0e0;
+  }
+
+  body {
+    @apply bg-canvas-bg text-text-primary;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow: hidden;
+  }
+
+  #root {
+    @apply h-screen w-screen;
+  }
+}
+
+@layer components {
+  .canvas-dot-grid {
+    background-image: radial-gradient(circle, var(--canvas-dot) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+}
